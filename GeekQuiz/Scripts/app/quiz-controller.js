@@ -1,5 +1,8 @@
-﻿angular.module('QuizApp', [])
-    .controller('QuizCtrl', function ($scope, $http) {
+﻿var quizController = angular.module('quizController', []);
+
+//angular.module('QuizApp', [])
+quizController
+    .controller('QuizCtrl', ['$scope', '$http', function ($scope, $http) {
         $scope.answered = false;
         $scope.title = "loading question...";
         $scope.options = [];
@@ -41,4 +44,4 @@
                 $scope.working = false;
             });
         };
-    });
+    }]);
